@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="icon" type="image/png" href="C:\Users\quint\Desktop\practica\corazones rojos.webp">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nuestro primer hijo</title>
+    <style>
+        body {
+            margin: 0px;   
+        }
+       
+
+        #carousel-container {
+            width: 100%;
+            margin: 1vh auto;
+            overflow: hidden;
+            align-items: center;
+        }
+
+        #carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 30%;
+            height: 1vh auto;
+            display: block;
+            margin: 0vh auto;
+        }
+
+        video {
+            width: 50%;
+            height: 50vh auto;
+            display: block;
+            margin: 5vh auto;
+        }
+
+        #prev, #next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            background-color: #da6d6d;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+
+        #prev {
+            left: 10px;
+        }
+
+        #next {
+            right: 10px;
+        }
+    </style>
+</head>
+<header>
+    <h1 style="text-align: center;">Pedro</h1>
+</header>
+<body>
+    <h3>
+Pedro fue de los primeros regalos que me hiciste y no solo por eso es de los más preciados.
+<br>
+Pedro ha estado en cada momento, desde que pasabamos tiempo en la parte de atrás de mi casa, hasta la primera vez que entraste a mi cuarto.
+<br>
+Estuvo cuando nos separamos y fue complice de nuestra reconciliación.
+<br>
+También fue mi acompañante en el momento que estuve más solita y no podía verte.
+<br>
+Gracias por regalarme a Pedro.   
+</h3>
+    <body style="background-image:url(https://img.freepik.com/vector-gratis/fondo-escritorio-fondo-corazon-vector-lindo_53876-144637.jpg);">
+    <div id="carousel-container">
+        <div id="carousel">
+            
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\PXL_20230403_035646159.jpg"></div>   
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\PXL_20230403_100922185 (1).jpg"></div>   
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\PXL_20230403_213059827.jpg"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\PXL_20230403_220348510 (1).jpg" alt="Imagen 2"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\IMG-lg5tm79t (2).jpg" alt="Imagen 2"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\PXL_20230410_214607434 (1).jpg" alt="Imagen 1"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\IMG_6697 (1).jpg" alt="Imagen 2"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\e9e778e9-7bce-43b9-a741-85cacdc9c459 (4).jpg" alt="Imagen 2"></div>
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\B6F11AEA-D9F7-43F2-9051-3B4916DBEBD7.jpg" alt="Imagen 2"></div>    
+            <div class="carousel-item"><img src="C:\Users\quint\Downloads\4FB9802D-89A5-4622-959E-F04269CF403B (1).jpg"></div>
+
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </div>
+
+    <button id="prev" onclick="prevSlide()">❮</button>
+    <button id="next" onclick="nextSlide()">❯</button>
+    
+    <script>
+        let currentIndex = 0;
+        const totalItems = document.querySelectorAll('.carousel-item').length;
+        const carousel = document.getElementById('carousel');
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            const translateValue = -currentIndex * 100 + '%';
+            carousel.style.transform = 'translateX(' + translateValue + ')';
+        }
+    </script>
+    
+</body>
+</html>
